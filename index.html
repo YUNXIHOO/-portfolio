@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yunxi Hou — Brand Strategist & Digital Marketer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep:   #5B21B6;
+      --purple-mid:    #7C3AED;
+      --purple-light:  #A855F7;
+      --purple-pale:   #F3E8FF;
+      --purple-ultra:  #FAF5FF;
+      --grad:          linear-gradient(135deg, #7C3AED 0%, #C084FC 100%);
+      --grad-text:     linear-gradient(135deg, #7C3AED, #A855F7);
+      --bg:            #FAFAFA;
+      --white:         #FFFFFF;
+      --text:          #18181B;
+      --text-sub:      #52525B;
+      --text-muted:    #A1A1AA;
+      --border:        #E4E4E7;
+      --radius-sm:     8px;
+      --radius-md:     16px;
+      --radius-lg:     24px;
+      --shadow-sm:     0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md:     0 4px 16px rgba(124,58,237,.10);
+      --shadow-lg:     0 12px 40px rgba(124,58,237,.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(250,250,250,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      text-decoration: none;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--purple-mid); }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* background decorative blobs */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -180px; right: -180px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(168,85,247,.18) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -120px; left: -120px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(124,58,237,.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 20px;
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1.08;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .hero-name span {
+      font-style: italic;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text-sub);
+      max-width: 420px;
+      margin: 20px 0 40px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--grad);
+      color: #fff;
+      border-radius: 50px;
+      font-size: .875rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: opacity .2s, transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(124,58,237,.3);
+    }
+
+    .btn-primary:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(124,58,237,.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: transparent;
+      color: var(--purple-mid);
+      border: 1.5px solid var(--purple-mid);
+      border-radius: 50px;
+      font-size: .875rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: background .2s, color .2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--purple-pale);
+    }
+
+    /* hero right: floating cards */
+    .hero-visual {
+      position: relative;
+      height: 420px;
+    }
+
+    .hero-card {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: 20px 24px;
+    }
+
+    .hero-card-main {
+      top: 0; left: 0; right: 0;
+      background: linear-gradient(135deg, #1A0533 0%, #3B0764 100%);
+      color: #fff;
+      padding: 32px 36px;
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-card-main .card-label {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #C084FC;
+      margin-bottom: 12px;
+    }
+
+    .hero-card-main h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .hero-card-main p {
+      font-size: .8rem;
+      color: rgba(255,255,255,.6);
+    }
+
+    .hero-card-stat {
+      bottom: 0; right: 0;
+      width: 200px;
+      border: 1px solid var(--border);
+    }
+
+    .hero-card-stat .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-card-stat .stat-label {
+      font-size: .75rem;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    .hero-card-badge {
+      bottom: 80px; left: -20px;
+      width: 160px;
+      background: var(--purple-pale);
+      border: 1px solid #DDD6FE;
+    }
+
+    .hero-card-badge .badge-icon {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-card-badge p {
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--purple-deep);
+    }
+
+    /* ── Section commons ── */
+    section { padding: 100px 48px; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--purple-mid);
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text-sub);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* ── Projects ── */
+    #projects { background: var(--white); }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    /* Featured project card (full-width) */
+    .project-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 460px;
+      box-shadow: var(--shadow-md);
+      transition: box-shadow .3s, transform .3s;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .project-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+      overflow: hidden;
+    }
+
+    /* DIS-COVER theme */
+    .project-card.discover .project-visual {
+      background: linear-gradient(145deg, #0D001A 0%, #2E0A5C 60%, #4C1D95 100%);
+    }
+
+    .discover-logo {
+      text-align: center;
+      z-index: 1;
+    }
+
+    .discover-logo .brand-tagline {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #C084FC;
+      margin-bottom: 16px;
+    }
+
+    .discover-logo h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .discover-logo .brand-sub {
+      font-size: .75rem;
+      color: rgba(255,255,255,.5);
+      margin-top: 12px;
+      letter-spacing: .06em;
+    }
+
+    /* floating phone mockup */
+    .phone-mockup {
+      position: absolute;
+      bottom: -20px; right: 20px;
+      width: 110px; height: 220px;
+      background: linear-gradient(180deg, #1A0533, #3B0764);
+      border-radius: 20px;
+      border: 2px solid rgba(192,132,252,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+
+    .phone-screen {
+      width: 90px; height: 190px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #5B21B6, #C084FC);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-screen-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: .6rem;
+      font-style: italic;
+      color: rgba(255,255,255,.9);
+      text-align: center;
+      padding: 8px;
+    }
+
+    /* Meethere theme */
+    .project-card.meethere .project-visual {
+      background: linear-gradient(145deg, #0C1445 0%, #1E3A8A 50%, #3730A3 100%);
+    }
+
+    .meethere-visual {
+      text-align: center;
+      z-index: 1;
+    }
+
+    .meethere-visual .brand-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, #60A5FA, #818CF8);
+      border-radius: 20px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 32px rgba(96,165,250,.4);
+    }
+
+    .meethere-visual h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .meethere-visual .brand-sub {
+      font-size: .75rem;
+      color: rgba(255,255,255,.5);
+      margin-top: 12px;
+      letter-spacing: .06em;
+    }
+
+    /* app mockup */
+    .app-mockup {
+      position: absolute;
+      bottom: -10px; right: 24px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+    }
+
+    .app-card-mini {
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: .65rem;
+      color: #fff;
+      width: 100px;
+    }
+
+    .app-card-mini .mini-label {
+      color: rgba(255,255,255,.5);
+      font-size: .6rem;
+      margin-bottom: 4px;
+    }
+
+    .app-card-mini .mini-val {
+      font-weight: 600;
+    }
+
+    /* project content */
+    .project-content {
+      padding: 48px 44px;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      background: var(--purple-pale);
+      padding: 5px 12px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .project-content h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .project-role {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .project-desc {
+      font-size: .9rem;
+      color: var(--text-sub);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .project-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .project-highlights li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .85rem;
+      color: var(--text-sub);
+    }
+
+    .project-highlights li::before {
+      content: '';
+      flex-shrink: 0;
+      margin-top: 7px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--grad);
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: .7rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    /* ── Experience ── */
+    #experience { background: var(--bg); }
+
+    .experience-header { margin-bottom: 56px; }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .exp-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 28px 24px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .exp-card:hover {
+      border-color: #DDD6FE;
+      box-shadow: var(--shadow-md);
+    }
+
+    .exp-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .exp-company {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 6px;
+    }
+
+    .exp-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .exp-meta {
+      text-align: right;
+    }
+
+    .exp-date {
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .exp-location {
+      font-size: .7rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .exp-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .83rem;
+      color: var(--text-sub);
+      line-height: 1.55;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      flex-shrink: 0;
+      margin-top: 7px;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--purple-light);
+    }
+
+    .exp-highlight {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── About / Skills ── */
+    #about {
+      background: linear-gradient(160deg, #1A0533 0%, #2E0464 100%);
+      color: #fff;
+    }
+
+    #about .section-label { color: #C084FC; }
+    #about .section-title { color: #fff; }
+    #about .section-title em { color: #C084FC; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    .about-text p {
+      font-size: .95rem;
+      color: rgba(255,255,255,.72);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .skills-section { }
+
+    .skills-group { margin-bottom: 28px; }
+
+    .skills-group-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 12px;
+    }
+
+    .skills-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      font-size: .78rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid rgba(192,132,252,.25);
+      color: rgba(255,255,255,.8);
+      background: rgba(192,132,252,.1);
+    }
+
+    /* education strip */
+    .edu-strip {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .edu-item { }
+
+    .edu-school {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #C084FC;
+      margin-bottom: 6px;
+    }
+
+    .edu-degree {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .edu-meta {
+      font-size: .78rem;
+      color: rgba(255,255,255,.45);
+    }
+
+    /* ── Contact ── */
+    #contact {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 80px 48px;
+    }
+
+    #contact .section-title { margin-bottom: 12px; }
+
+    #contact .section-sub {
+      margin: 0 auto 44px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 50px;
+      font-size: .875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .contact-link.email {
+      background: var(--grad);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(124,58,237,.25);
+    }
+
+    .contact-link.email:hover {
+      box-shadow: 0 6px 28px rgba(124,58,237,.4);
+      transform: translateY(-1px);
+    }
+
+    .contact-link.linkedin {
+      background: var(--purple-pale);
+      color: var(--purple-deep);
+      border: 1px solid #DDD6FE;
+    }
+
+    .contact-link.linkedin:hover {
+      background: #EDE9FE;
+    }
+
+    footer {
+      padding: 24px 48px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: .78rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      nav .nav-links { display: none; }
+      section { padding: 72px 24px; }
+      #hero { padding: 100px 24px 64px; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero-visual { height: 280px; }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .project-visual { min-height: 260px; }
+
+      .exp-grid { grid-template-columns: 1fr; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .edu-strip { grid-template-columns: 1fr; }
+
+      .projects-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <a href="#hero" class="nav-logo">Yunxi Hou</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Brand Strategist · Digital Marketer · Founder</p>
+        <h1 class="hero-name">
+          Yunxi<br>
+          <span>Hou</span>
+        </h1>
+        <p class="hero-tagline">
+          I build brands that move people — from luxury beauty at L'Oréal Travel Retail
+          to 0-to-1 consumer ventures. Currently at ESSEC Business School, Paris.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card hero-card-main">
+          <p class="card-label">Featured Project</p>
+          <h3>DIS-COVER</h3>
+          <p>The soul under the case — DTC phone case brand built from 0 to 1</p>
+        </div>
+        <div class="hero-card hero-card-stat">
+          <div class="stat-num">2M+</div>
+          <div class="stat-label">impressions generated at Proya</div>
+        </div>
+        <div class="hero-card hero-card-badge">
+          <div class="badge-icon">✈</div>
+          <p>Based in Paris, France</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section id="projects">
+    <div class="section-inner">
+      <div class="projects-header">
+        <div>
+          <p class="section-label">Selected Work</p>
+          <h2 class="section-title">Projects I <em>Founded</em></h2>
+          <p class="section-sub">Two ventures built from scratch — a DTC brand and a travel app — both driven by the same instinct: spotting a gap and filling it with clarity.</p>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- DIS-COVER -->
+        <div class="project-card discover">
+          <div class="project-visual">
+            <div class="discover-logo">
+              <p class="brand-tagline">DTC Phone Case Brand · EU Market</p>
+              <h2>The Soul<br>Under the Case.</h2>
+              <p class="brand-sub">Affordable collage-aesthetic · €29.90</p>
+            </div>
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <p class="phone-screen-text">DIS-<br>COVER</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <span class="project-tag">⚡ Founder · 2025</span>
+            <h3>DIS-COVER</h3>
+            <p class="project-role">Strategic Lead · Digital Marketing · Brand</p>
+            <p class="project-desc">
+              A DTC phone case brand built for European trend-lovers aged 18–35 who want Casetify-level artistry without the €75 price tag. Collage-aesthetic design meets accessible luxury at €29.90.
+            </p>
+            <ul class="project-highlights">
+              <li>Built brand positioning and consumer storytelling around self-expression — <span class="exp-highlight">12 product concepts tested</span> with target consumers</li>
+              <li>Designed a full Shopify e-commerce ecosystem from product discovery to checkout</li>
+              <li>Mapped competitive landscape: positioned DIS-COVER in the uncontested "high artistic uniqueness × accessible price" quadrant</li>
+              <li>Developed go-to-market strategy targeting 450K EU trend-followers in Year 1, with a projected SOM of ~€149K</li>
+              <li>Led organic social strategy (TikTok, Instagram, Pinterest) and zero-budget video production</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Brand Strategy</span>
+              <span class="tag">D2C / E-commerce</span>
+              <span class="tag">Shopify</span>
+              <span class="tag">Market Sizing</span>
+              <span class="tag">Social Media</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meethere -->
+        <div class="project-card meethere">
+          <div class="project-visual">
+            <div class="meethere-visual">
+              <div class="brand-icon">🧭</div>
+              <h2>Meethere</h2>
+              <p class="brand-sub">Your Next Adventure Starts Here</p>
+            </div>
+            <div class="app-mockup">
+              <div class="app-card-mini">
+                <div class="mini-label">Travel Buddies</div>
+                <div class="mini-val">3 matched</div>
+              </div>
+              <div class="app-card-mini">
+                <div class="mini-label">Bill Split</div>
+                <div class="mini-val">€0 pending</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <span class="project-tag">🧭 Solo Founder · 2024</span>
+            <h3>Meethere</h3>
+            <p class="project-role">Product Strategy · Brand · UX</p>
+            <p class="project-desc">
+              A mobile app designed for the rise of solo travel — helping adventurers find compatible travel companions, co-create itineraries, split expenses, and leave verified ratings for their travel buddies.
+            </p>
+            <ul class="project-highlights">
+              <li>Identified the solo travel gap: growing cohort of solo travelers with no trusted platform to find vetted, compatible companions</li>
+              <li>Designed core app flows: buddy matching, shared itinerary builder, in-app bill splitting, and post-trip rating system</li>
+              <li>Developed brand identity and visual language for the app UI — playful yet trustworthy</li>
+              <li>Built pitch materials and UX prototypes to validate the concept with target users</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">App Concept</span>
+              <span class="tag">UX Strategy</span>
+              <span class="tag">Solo Travel</span>
+              <span class="tag">Brand Identity</span>
+              <span class="tag">Community</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience ── -->
+  <section id="experience">
+    <div class="section-inner">
+      <div class="experience-header">
+        <p class="section-label">Professional Experience</p>
+        <h2 class="section-title">Where I've <em>Worked</em></h2>
+        <p class="section-sub">From global luxury conglomerates to fast-growing Chinese platforms — I've built campaigns, managed launches, and driven results across three continents.</p>
+      </div>
+
+      <div class="exp-grid">
+
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div>
+              <p class="exp-company">L'Oréal Group</p>
+              <p class="exp-title">Assistant Marketing Manager<br>CPD Travel Retail Worldwide</p>
+            </div>
+            <div class="exp-meta">
+              <p class="exp-date">2025 · 6 months</p>
+              <p class="exp-location">Paris, France</p>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Orchestrated cross-functional Go-to-Market rollouts (supply chain, packaging, retail) across <span class="exp-highlight">EMEA, Americas & APAC</span>, maintaining global brand consistency</li>
+            <li>Led deployment of Visual Merchandising and POS materials for <span class="exp-highlight">12 product & set launches</span></li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div>
+              <p class="exp-company">Proya Cosmetics</p>
+              <p class="exp-title">Marketing Specialist</p>
+            </div>
+            <div class="exp-meta">
+              <p class="exp-date">2024 · 5 months</p>
+              <p class="exp-location">Hangzhou, China</p>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Screened <span class="exp-highlight">20+ influencers</span> using performance data (engagement rate, audience fit) for Valentine's Day campaign</li>
+            <li>Generated <span class="exp-highlight">2M+ impressions</span> and drove strong consumer engagement</li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div>
+              <p class="exp-company">WPP · Wunderman Thompson</p>
+              <p class="exp-title">Media Planner</p>
+            </div>
+            <div class="exp-meta">
+              <p class="exp-date">2023 · 2 months</p>
+              <p class="exp-location">Shanghai, China</p>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Optimized real-time media placements for <span class="exp-highlight">La Prairie</span> across TikTok & Google during the 11.11 shopping festival</li>
+            <li>Tracked CTR and CPC performance, driving the brand's <span class="exp-highlight">highest-ever single-day sales</span> on-platform</li>
+          </ul>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div>
+              <p class="exp-company">Kuaishou Technology</p>
+              <p class="exp-title">Global Marketing Assistant</p>
+            </div>
+            <div class="exp-meta">
+              <p class="exp-date">2023 · 5 months</p>
+              <p class="exp-location">Beijing, China</p>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Crafted tailored brand proposals with custom filters, hashtags & effects for international advertisers</li>
+            <li>Secured sponsorship from PINKFLASH — <span class="exp-highlight">3M+ impressions</span> during Eid al-Adha festival</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About & Skills ── -->
+  <section id="about">
+    <div class="section-inner">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Strategy, <em>Creativity</em>,<br>and a Founder's Mindset</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm Yunxi (Cecilia) — a brand strategist and digital marketer with experience spanning luxury beauty, media planning, and consumer tech. Currently pursuing a Master in Management with a Marketing specialization at ESSEC Business School in Paris.
+          </p>
+          <p>
+            My background bridges East and West: I've built campaigns for global beauty giants in Paris and Shanghai, planned media for premium skincare on Chinese platforms, and launched two ventures from scratch. I think in systems, communicate in stories, and always start with the consumer.
+          </p>
+          <p>
+            When I'm not building brands, I'm at the ping-pong table or climbing wall — both require the same thing: reading the situation fast and committing fully.
+          </p>
+        </div>
+
+        <div class="skills-section">
+          <div class="skills-group">
+            <p class="skills-group-label">Brand & Marketing</p>
+            <div class="skills-pills">
+              <span class="skill-pill">Brand Strategy</span>
+              <span class="skill-pill">Go-to-Market</span>
+              <span class="skill-pill">Influencer Marketing</span>
+              <span class="skill-pill">Social Media</span>
+              <span class="skill-pill">Visual Merchandising</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <p class="skills-group-label">Digital & Data</p>
+            <div class="skills-pills">
+              <span class="skill-pill">Media Planning</span>
+              <span class="skill-pill">CTR / CPC Optimization</span>
+              <span class="skill-pill">Power BI</span>
+              <span class="skill-pill">TikTok Ads</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <p class="skills-group-label">Tools & Languages</p>
+            <div class="skills-pills">
+              <span class="skill-pill">Shopify</span>
+              <span class="skill-pill">Canva</span>
+              <span class="skill-pill">Adobe Photoshop</span>
+              <span class="skill-pill">PowerPoint</span>
+              <span class="skill-pill">Chinese (Native)</span>
+              <span class="skill-pill">English (Professional)</span>
+              <span class="skill-pill">French (B1)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-strip">
+        <div class="edu-item">
+          <p class="edu-school">ESSEC Business School</p>
+          <p class="edu-degree">Grande École — Master in Management</p>
+          <p class="edu-meta">Marketing Specialization · 2024–2027 · Cergy, France</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-school">Shanghai Institutes for International Studies</p>
+          <p class="edu-degree">Master in Law (International Politics)</p>
+          <p class="edu-meta">2021–2024 · Shanghai, China</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's <em>Connect</em></h2>
+      <p class="section-sub">
+        Open to apprenticeship opportunities in Marketing starting September 2026 (2 days school + 3 days office). Based in Paris — happy to connect globally.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:B00821427@essec.edu" class="contact-link email">
+          ✉ B00821427@essec.edu
+        </a>
+        <a href="https://www.linkedin.com/in/yunxi-hou-creative/" target="_blank" rel="noopener" class="contact-link linkedin">
+          in  LinkedIn Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Yunxi Hou · Designed & built with intention · Paris, France</p>
+  </footer>
+
+</body>
+</html>
